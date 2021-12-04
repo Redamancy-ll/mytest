@@ -18,9 +18,19 @@
         <input type="submit" value="上传"/>
     </form>
 </div>
-hello,${requestScope.user.username}
-你今年${requestScope.user.age}岁，
-密码是${requestScope.user.pwd}<br>
+<div>
+    <form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/user/upload">
+        上传图片1：<input type="file" name="image"/><br>
+        上传图片2：<input type="file" name="image"/><br>
+        上传图片3：<input type="file" name="image"/><br>
+    </form>
+</div>
+<div>
+    <a href="${pageContext.request.contextPath}/user/upload"/>
+</div>
+<%--hello,${requestScope.user.username}--%>
+<%--你今年${requestScope.user.age}岁，--%>
+<%--密码是${requestScope.user.pwd}<br>--%>
 <%--${requestScope.username}!!今年${requestScope.age}岁了！--%>
 <%--${sessionScope.username}!!今年${sessionScope.age}岁了！--%>
 </body>
