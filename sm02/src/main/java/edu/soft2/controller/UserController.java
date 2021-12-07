@@ -61,6 +61,10 @@ public class UserController {
             System.out.println("UserController.upload.foreach");
             is = imageFile.getInputStream();
             String filename = imageFile.getOriginalFilename();
+            if(filename.equals("")){
+                System.out.println("空字符串，进入下一轮循环");
+                continue;
+            }
             String realPath = request.getServletContext().getRealPath("/uploads");
             System.out.println("上传路径="+realPath);
             String newname = doFilename(filename);
